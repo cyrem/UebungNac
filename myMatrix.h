@@ -8,7 +8,13 @@
 #ifndef MYMATRIX_H_
 #define MYMATRIX_H_
 
+
 class myMatrix {
+
+private:
+
+	static int counter;
+
 protected:
 	int m_zeilen;
 	int m_spalten;
@@ -17,7 +23,9 @@ protected:
 public:
 	myMatrix();
 	virtual ~myMatrix();
-	void ausgabe();
+	virtual void ausgabe();
+	static void getCounter();
+
 
 };
 

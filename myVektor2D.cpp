@@ -41,5 +41,5 @@ void tausche(myVektor2D *a, myVektor2D *b) {
 }
 void myVektor2D::ausgabe(){
 	cout << "myVektor2D" << endl;
-	this->ausgabe();
+	myMatrix::ausgabe();
 }
