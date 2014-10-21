@@ -15,7 +15,8 @@ public:
 	myVektor();
 	virtual ~myVektor();
 	float betrag();
-	float skalarProdukt(myVektor v);
+	float skalarProdukt(myVektor *v);
+	float winkel(myVektor *v);
 };
 
 #endif /* MYVEKTOR_H_ */

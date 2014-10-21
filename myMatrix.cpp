@@ -25,8 +25,8 @@ myMatrix::~myMatrix() {
 
 
 	myMatrix::counter--;
-	cout << "Matrix wird zerstört" << endl;
-	this->ausgabe();
+//	cout << "Matrix wird zerstört" << endl;
+//	this->ausgabe();
 }
 
 void myMatrix::ausgabe() {
