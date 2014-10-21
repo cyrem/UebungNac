@@ -12,9 +12,27 @@
 using namespace std;
 int main(int argc, char* argv[]) {
 
-	myVektor2D v(1, 1), w(-5, 0);
+myVektor2D** varr = new myVektor2D*[2];
 
-	cout << v.winkel(&w);
+varr[0] = new myVektor2D(2,3);
+varr[1] = new myVektor2D(-2,1);
+
+varr[0]->addiere(varr[1]);
+varr[0]->ausgabe();
+
+delete varr[0];
+delete varr[1];
+delete[] varr;
+
+
+myMatrix::getCounter();
+
+
+
+
+
+
+
 	return 0;
 
 }

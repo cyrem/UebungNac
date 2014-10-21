@@ -10,36 +10,47 @@
 
 using namespace std;
 
+myVektor2D::myVektor2D(int m, int n) :
+		myVektor::myVektor(2, 1) {
+	this->m_Element[0] = m;
+	this->m_Element[1] = n;
 
-myVektor2D::myVektor2D() {
-}
-
-myVektor2D::myVektor2D(int a, int b) {
-	this->m_Element[0] = a;
-	this->m_Element[1] = b;
 }
 myVektor2D::~myVektor2D() {
-	// TODO Auto-generated destructor stub
 }
 
 void myVektor2D::addiere(myVektor2D *v) {
-	this->m_Element[0] += v->m_Element[0];
-	this->m_Element[1] += v->m_Element[1];
+	int anz = this->m_zeilen * this->m_spalten;
+	for (int i = 0; i < anz; i++) {
+		this->m_Element[i] += v->m_Element[i];
+	}
 }
+
+void myVektor2D::subtrahiere(myVektor2D *v) {
+	int anz = this->m_zeilen * this->m_spalten;
+	for (int i = 0; i < anz; i++) {
+		this->m_Element[i] -= v->m_Element[i];
+	}
+}
+
+
 void myVektor2D::kopiereIn(myVektor2D *v) {
-	v->m_Element[0] = this->m_Element[0];
-	v->m_Element[1] = this->m_Element[1];
+int anz = this->m_zeilen * this->m_spalten;
+
+for (int i = 0; i < anz; i++) {
+	v->m_Element[i] = this->m_Element[i];
+}
 }
 
-void tausche(myVektor2D *a, myVektor2D *b) {
-	myVektor2D temp;
+void myVektor2D::tausche(myVektor2D *b) {
+myVektor2D temp(this->m_spalten, this->m_zeilen);
 
-	a->kopiereIn(&temp);
-	b->kopiereIn(a);
-	temp.kopiereIn(b);
+this->kopiereIn(&temp);
+b->kopiereIn(this);
+temp.kopiereIn(b);
 
 }
-void myVektor2D::ausgabe(){
-	cout << "myVektor2D" << endl;
-	myMatrix::ausgabe();
+void myVektor2D::ausgabe() {
+cout << "myVektor2D" << endl;
+myMatrix::ausgabe();
 }

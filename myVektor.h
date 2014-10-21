@@ -12,11 +12,12 @@
 
 class myVektor: public myMatrix {
 public:
-	myVektor();
+	myVektor(int m, int n);
 	virtual ~myVektor();
 	float betrag();
 	float skalarProdukt(myVektor *v);
 	float winkel(myVektor *v);
+	void skalarMult(int x);
 };
 
 #endif /* MYVEKTOR_H_ */

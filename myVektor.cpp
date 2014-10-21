@@ -14,20 +14,13 @@
 #endif
 
 using namespace std;
-myVektor::myVektor() {
-}
+myVektor::myVektor(int m, int n):myMatrix::myMatrix(m,n){}
 
 myVektor::~myVektor() {
 	// TODO Auto-generated destructor stub
 }
 
 float myVektor::betrag() {
-//	myVektor *help;
-//	help = this;
-//	float val = 0.0;
-//	for (int i = 0; i < this->m_spalten * this->m_zeilen; i++) {
-//		val += pow(this->m_Element[i], 2);
-//	}
 	return sqrt(myVektor::skalarProdukt(this));
 }
 float myVektor::skalarProdukt(myVektor *v) {
@@ -42,6 +35,11 @@ float myVektor::skalarProdukt(myVektor *v) {
 		return val;
 	}
 
+}
+void myVektor::skalarMult(int x){
+	for (int i = 0; i < this->m_spalten * this->m_zeilen; i++) {
+			this->m_Element[i] *= x;
+		}
 }
 
 float myVektor::winkel(myVektor *v) {

@@ -12,19 +12,19 @@
 class myMatrix {
 
 private:
-
 	static int counter;
-
 protected:
 	int m_zeilen;
 	int m_spalten;
-	float m_Element[2];
+	float* m_Element;
 
 public:
-	myMatrix();
+	myMatrix(int m, int n);
 	virtual ~myMatrix();
 	virtual void ausgabe();
 	static void getCounter();
+	int getSpalten();
+	int getZeilen();
 
 
 };

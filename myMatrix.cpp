@@ -8,13 +8,16 @@
 #include "myMatrix.h"
 #include <iostream>
 
-int	myMatrix::counter =0;
+int myMatrix::counter = 0;
 
 using namespace std;
 
-myMatrix::myMatrix() :
-		m_zeilen(1), m_spalten(2) {
-	for (int i = 0; i < this->m_zeilen * this->m_spalten; i++) {
+myMatrix::myMatrix(int m, int n) :
+		m_zeilen(m), m_spalten(n) {
+	int anz = this->m_zeilen * this->m_spalten;
+	this->m_Element = new float[anz];
+
+	for (int i = 0; i < anz; i++) {
 		this->m_Element[i] = 0.0;
 	}
 
@@ -23,9 +26,8 @@ myMatrix::myMatrix() :
 
 myMatrix::~myMatrix() {
 
-
 	myMatrix::counter--;
-//	cout << "Matrix wird zerstört" << endl;
+	cout << "Matrix wird zerstört" << endl;
 //	this->ausgabe();
 }
 
@@ -37,4 +39,10 @@ void myMatrix::ausgabe() {
 void myMatrix::getCounter() {
 
 	cout << "anzahl instanzen: " << myMatrix::counter << endl;
+}
+int myMatrix::getSpalten() {
+	return this->m_spalten;
+}
+int myMatrix::getZeilen() {
+	return this->m_zeilen;
 }

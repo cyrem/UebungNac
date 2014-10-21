@@ -13,15 +13,15 @@
 
 class myVektor2D: public myVektor {
 public:
-	myVektor2D();
-	myVektor2D(int a, int b);
+	myVektor2D(int m, int n);
 	virtual ~myVektor2D();
 	void addiere(myVektor2D *v);
 	void kopiereIn(myVektor2D *v);
 	void ausgabe();
+	void tausche (myVektor2D *b);
+	void subtrahiere(myVektor2D *v);
 
 };
-void tausche (myVektor2D *a, myVektor2D *b);
 
 
 
