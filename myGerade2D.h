@@ -9,8 +9,6 @@
 #define MYGERADE2D_H_
 #include "myVektor2D.h"
 
-
-
 class myGerade2D {
 public:
 	myVektor2D m_Normale;

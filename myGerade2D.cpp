@@ -6,26 +6,33 @@
  */
 
 #include "myGerade2D.h"
+#include <iostream>
+using namespace std;
+
 
 myGerade2D::myGerade2D(myVektor2D a, myVektor2D b) :
-		m_Normale(a.getSpalten(),a.getZeilen()),
-		m_Aufpunkt(b.getSpalten(),b.getZeilen()) {
+        m_Normale(0, 0), m_Aufpunkt(0, 0) {
 
-	a.kopiereIn(&this->m_Normale);
-	b.kopiereIn(&this->m_Aufpunkt);
+    a.kopiereIn(&this->m_Normale);
+    b.kopiereIn(&this->m_Aufpunkt);
+
+
+    cout << "myGerade:" << endl;
+    a.ausgabe();
+    b.ausgabe();
 
 }
 
 myGerade2D::~myGerade2D() {
-	// TODO Auto-generated destructor stub
+    // TODO Auto-generated destructor stub
 }
 
-float myGerade2D::gerichteterAbstand(myVektor2D x){
+float myGerade2D::gerichteterAbstand(myVektor2D x) {
 
-myVektor2D zwischErg(0,0);
+    myVektor2D zwischErg(0, 0);
 
-x.kopiereIn(&zwischErg);
-zwischErg.subtrahiere(&this->m_Aufpunkt);
-
+    x.kopiereIn(&zwischErg);
+    zwischErg.subtrahiere(&this->m_Aufpunkt);
+    return zwischErg.skalarProdukt(&this->m_Normale)/this->m_Normale.betrag();
 
 }
