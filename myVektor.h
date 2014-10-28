@@ -15,9 +15,9 @@ public:
 	myVektor(int m, int n);
 	virtual ~myVektor();
 	float betrag();
-	float skalarProdukt(myVektor *v);
-	float winkel(myVektor *v);
-	void skalarMult(int x);
+	float skalarProdukt(myVektor &v);
+	float winkel(myVektor &v);
+	void skalarMult(int &x);
 };
 
 #endif /* MYVEKTOR_H_ */
