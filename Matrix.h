@@ -1,15 +1,15 @@
 /*
- * myMatrix.h
+ * Matrix.h
  *
  *  Created on: 07.10.2014
  *      Author: mat
  */
 
-#ifndef MYMATRIX_H_
-#define MYMATRIX_H_
+#ifndef MATRIX_H_
+#define MATRIX_H_
 
 
-class myMatrix {
+class Matrix {
 
 private:
 	static int counter;
@@ -19,14 +19,16 @@ protected:
 	float* m_Element;
 
 public:
-	myMatrix(int m, int n);
-	virtual ~myMatrix();
-	virtual void ausgabe();
+	Matrix(int m, int n);
+	virtual ~Matrix();
+	virtual void ausgabe()const;
 	static void getCounter();
 	int getSpalten();
 	int getZeilen();
+	float &getElemente();
+	const float &getElemente() const;
 
 
 };
 
-#endif /* MYMATRIX_H_ */
+#endif /* MATRIX_H_ */
