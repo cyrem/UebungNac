@@ -37,7 +37,7 @@ void Vektor2D::subtrahiere(const Vektor2D &v) {
     }
 }
 
-void Vektor2D::kopiereIn(Vektor2D &v) {
+void Vektor2D::kopiereIn(Vektor2D &v) const {
     int anz = this->m_zeilen * this->m_spalten;
 
     for (int i = 0; i < anz; i++) {
@@ -53,19 +53,35 @@ void Vektor2D::tausche(Vektor2D &b) {
     temp.kopiereIn(b);
 
 }
-void Vektor2D::ausgabe()const {
+void Vektor2D::ausgabe() const {
     cout << "Vektor2D" << endl;
     Matrix::ausgabe();
 }
 
 //##################################
 
-void operator+(Vektor2D &t, Vektor2D &v) {
-    int anz = t.getZeilen() * t.getZeilen();
-    float asdf = t.getElemente();
-    float asdf2 = v.getElemente();
-    for (int i = 0; i < anz; i++) {
-//        asdf[i] += asdf2[i];
-    }
+Vektor2D operator+(Vektor2D &t, Vektor2D &v) {
+    Vektor2D ergebnis(t.getSpalten(), t.getZeilen());
 
+    if (t.getZeilen() == v.getZeilen() && t.getSpalten() == v.getSpalten()) {
+        t.kopiereIn(ergebnis);
+        ergebnis.addiere(v);;
+      return  ergebnis;
+    }
+    return ergebnis;
 }
+
+Vektor2D operator*(Vektor2D &vec, float skalar) {
+    Vektor2D ergebnis(vec.getSpalten(), vec.getZeilen());
+    vec.kopiereIn(ergebnis);
+    ergebnis.skalarMult(skalar);
+    return ergebnis;
+}
+
+Vektor2D operator*(float skalar, Vektor2D &vec) {
+    Vektor2D ergebnis(vec.getSpalten(), vec.getZeilen());
+    vec.kopiereIn(ergebnis);
+    ergebnis.skalarMult(skalar);
+    return ergebnis;
+}
+

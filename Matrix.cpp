@@ -40,10 +40,10 @@ void Matrix::getCounter() {
 
 	cout << "anzahl instanzen: " << Matrix::counter << endl;
 }
-int Matrix::getSpalten() {
+int Matrix::getSpalten() const {
 	return this->m_spalten;
 }
-int Matrix::getZeilen() {
+ int Matrix::getZeilen() const{
 	return this->m_zeilen;
 }
 

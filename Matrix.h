@@ -23,8 +23,8 @@ public:
 	virtual ~Matrix();
 	virtual void ausgabe()const;
 	static void getCounter();
-	int getSpalten();
-	int getZeilen();
+	int getSpalten()const;
+	int getZeilen()const;
 	float &getElemente();
 	const float &getElemente() const;
 

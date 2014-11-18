@@ -10,10 +10,11 @@
 #include "Gerade2D.h"
 #include "Vektor.h"
 #include "Vektor2D.h"
+#include "Funktion2D.h"
+
 
 using namespace std;
 int main(int argc, char* argv[]) {
-
 
 //Vektor2D* varr[3];// = new Vektor2D[3];
 
@@ -24,10 +25,15 @@ int main(int argc, char* argv[]) {
     Vektor2D varr4(1, 1); // = new Vektor2D[3];
     Vektor2D varr5(-1, 1); // = new Vektor2D[3];
 
+    Vektor2D erg(0, 0);
+    erg = varr4 + varr5;
+
+    Funktion2D asdf;
+
+    cout << asdf(varr4)<< endl;
 
 
-
-    cout << Gerade2D(varr4).aufGerade(varr5)<< endl;
+    cout << Gerade2D(varr4).aufGerade(varr5) << endl;
 
 //    varr3 + varr1;
 //    varr3.ausgabe();
