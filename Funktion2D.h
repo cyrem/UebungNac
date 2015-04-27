@@ -20,4 +20,11 @@ public:
     virtual ~Funktion2D();
 };
 
+float minimieren2D(Funktion2D f, Vektor2D start,float step,float tol, float ftol);
+float gradient2D(Funktion2D f,Vektor2D start);
+
+
+
 #endif /* FUNKTION2D_H_ */
+
+

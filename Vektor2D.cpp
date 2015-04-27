@@ -10,10 +10,27 @@
 
 using namespace std;
 
+void tausche(Vektor2D* a, Vektor2D* b) {
+    Vektor2D temp(2, 1);
+
+    a->kopiereIn(temp);
+    b->kopiereIn(*a);
+    temp.kopiereIn(*b);
+}
+
+Vektor2D::Vektor2D() :
+        Vektor(2, 1) {
+//    this->m_Element[0] = 0;
+//    this->m_Element[1] = 0;
+    cout << "vektor2d constructor" << endl;
+}
+
 Vektor2D::Vektor2D(int m, int n) :
-        Vektor::Vektor(2, 1) {
+        Vektor(2, 1) {
     this->m_Element[0] = m;
     this->m_Element[1] = n;
+
+    cout << "vektor2d constructor" << endl;
 }
 Vektor2D::Vektor2D(Vektor2D &a) :
         Vektor::Vektor(a.getSpalten(), a.getZeilen()) {
@@ -21,6 +38,7 @@ Vektor2D::Vektor2D(Vektor2D &a) :
 }
 
 Vektor2D::~Vektor2D() {
+    cout << "vektor2d decons" << endl;
 }
 
 void Vektor2D::addiere(const Vektor2D &v) {
@@ -51,7 +69,6 @@ void Vektor2D::tausche(Vektor2D &b) {
     this->kopiereIn(temp);
     b.kopiereIn(*this);
     temp.kopiereIn(b);
-
 }
 void Vektor2D::ausgabe() const {
     cout << "Vektor2D" << endl;
@@ -60,13 +77,26 @@ void Vektor2D::ausgabe() const {
 
 //##################################
 
+//Vektor2D operator+(Vektor2D t, Vektor2D v){
+//    Vektor2D ergebnis(t.getSpalten(), t.getZeilen());
+//
+//        if (t.getZeilen() == v.getZeilen() && t.getSpalten() == v.getSpalten()) {
+//            t.kopiereIn(ergebnis);
+//            ergebnis.addiere(v);;
+//          return  ergebnis;
+//        }
+//        return ergebnis;
+//
+//}
+
 Vektor2D operator+(Vektor2D &t, Vektor2D &v) {
     Vektor2D ergebnis(t.getSpalten(), t.getZeilen());
 
     if (t.getZeilen() == v.getZeilen() && t.getSpalten() == v.getSpalten()) {
         t.kopiereIn(ergebnis);
-        ergebnis.addiere(v);;
-      return  ergebnis;
+        ergebnis.addiere(v);
+        ;
+        return ergebnis;
     }
     return ergebnis;
 }

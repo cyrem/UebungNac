@@ -13,7 +13,8 @@
 
 class Vektor2D: public Vektor {
 public:
-	Vektor2D(int m, int n);
+    Vektor2D();
+    Vektor2D(int m, int n);
     Vektor2D(Vektor2D &a);
 
 	virtual ~Vektor2D();
@@ -23,6 +24,8 @@ public:
 	void tausche (Vektor2D &b);
 	void subtrahiere(const Vektor2D &v);
 
+
+//	friend Vektor2D operator+(Vektor2D t, Vektor2D v);
 	friend Vektor2D operator+(Vektor2D &t, Vektor2D &v);
 	friend Vektor2D operator*(Vektor2D &vec,float skalar) ;
     friend Vektor2D operator*(float skalar, Vektor2D &vec);

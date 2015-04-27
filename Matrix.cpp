@@ -22,12 +22,14 @@ Matrix::Matrix(int m, int n) :
 	}
 
 	Matrix::counter++;
+	cout << "matrix constructor"<<endl;
 }
 
 Matrix::~Matrix() {
 
 	Matrix::counter--;
-	cout << "Matrix wird zerst�rt" << endl;
+	cout << "Matrix wird zerstört" << endl;
+	delete[] m_Element;
 //	this->ausgabe();
 }
 

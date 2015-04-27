@@ -27,9 +27,8 @@ Gerade2D::~Gerade2D() {
     // TODO Auto-generated destructor stub
 }
 
-float Gerade2D::gerichteterAbstand(Vektor2D &x) const{
-
-   Vektor2D  zwischErg(0, 0);
+float Gerade2D::gerichteterAbstand(Vektor2D &x) const {
+    Vektor2D zwischErg(0, 0);
 
     x.kopiereIn(zwischErg);
     zwischErg.subtrahiere(this->m_Aufpunkt);
@@ -37,7 +36,7 @@ float Gerade2D::gerichteterAbstand(Vektor2D &x) const{
     return erg / this->m_Normale.betrag();
 }
 
-bool Gerade2D::aufGerade(Vektor2D &x) const{
+bool Gerade2D::aufGerade(Vektor2D &x) const {
     Vektor2D zwischErg(0, 0);
 
     x.kopiereIn(zwischErg);

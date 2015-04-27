@@ -15,7 +15,7 @@
 
 using namespace std;
 Vektor::Vektor(int m, int n) :
-        Matrix::Matrix(m, n) {
+        Matrix(m, n) {
 }
 
 Vektor::~Vektor() {
