@@ -31,8 +31,10 @@ int main(int argc, char* argv[]) {
 //    w->addiere(b);
 //    w->ausgabe();
 //
-//    Matrix::getCounter();
 //
+//
+//    Matrix::getCounter();
+
 //    Vektor2D u(1, 2);
 //    u.kopiereIn(*w);
 //    u.kopiereIn(a);
@@ -44,6 +46,29 @@ int main(int argc, char* argv[]) {
 //
 //    tausche(z, &a);
 
+    //aufgabenblatt 4
+
+
+//    Vektor2D v(1,2), w(3,4);
+//    Matrix M;
+//    Matrix* Mpointer;
+//    M=v;
+//    Mpointer = &v;
+//    std::cout << "Ausgabe von M und über Mpointer" << std::endl;
+//    M.ausgabe();
+//    Mpointer->ausgabe();
+//    v.addiere(*w);
+//    std::cout << "Ausgabe von v nach Addieren" << std::endl;
+//    v.ausgabe();
+//    std::cout << "Ausgabe von M/Mpointer nach Add." << std::endl;
+//    M.ausgabe();
+//    Mpointer->ausgabe();
+//
+
+    Matrix blub(4,2);
+    blub(1,2);
+
+
 //    Vektor2D **varr = new Vektor2D*[3];
 //
 //    varr[0] = new Vektor2D(-3, -4);
@@ -53,14 +78,12 @@ int main(int argc, char* argv[]) {
 //    delete varr[0];
 //    delete varr[1];
 //    delete varr[2];
-
-    Vektor2D *varr = new Vektor2D[3];
-
-//    varr[0] = new Vektor2D(-3, -4);
-//    varr[1] = new Vektor2D(0, 0);
-//    varr[2] = new Vektor2D(4, 3);
-
-    delete[] varr;
+//
+//
+//    delete[] varr;
+//
+//    delete z;
+//    delete w;
 
     Matrix::getCounter();
 

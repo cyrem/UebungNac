@@ -10,17 +10,8 @@
 
 using namespace std;
 
-Gerade2D::Gerade2D(Vektor2D n) :
-        m_Normale(n), m_Aufpunkt(0, 0) {
-}
-
-Gerade2D::Gerade2D(Vektor2D a, Vektor2D b) :
-        m_Normale(a), m_Aufpunkt(b) {
-
-    cout << "Gerade:" << endl;
-    a.ausgabe();
-    b.ausgabe();
-
+Gerade2D::Gerade2D(Vektor2D n, Vektor2D m = Vektor2D(0,0)) :
+        m_Normale(n), m_Aufpunkt(m) {
 }
 
 Gerade2D::~Gerade2D() {

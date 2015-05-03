@@ -14,8 +14,7 @@ public:
 	Vektor2D m_Normale;
 	Vektor2D m_Aufpunkt;
 
-	Gerade2D(Vektor2D a, Vektor2D b);
-	Gerade2D(Vektor2D n);
+	Gerade2D(Vektor2D n, Vektor2D m);
 	virtual ~Gerade2D();
 	float gerichteterAbstand(Vektor2D &x) const;
 	bool aufGerade(Vektor2D &x) const;

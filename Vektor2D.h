@@ -16,6 +16,7 @@ public:
     Vektor2D();
     Vektor2D(int m, int n);
     Vektor2D(Vektor2D &a);
+    Vektor2D(const Vektor2D &b);
 
 	virtual ~Vektor2D();
 	void addiere(const Vektor2D &v);

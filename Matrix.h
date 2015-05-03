@@ -19,6 +19,7 @@ protected:
 
 public:
     Matrix(int m, int n);
+    Matrix(Matrix const & m);
     virtual ~Matrix();
     virtual void ausgabe() const;
     static void getCounter();
@@ -26,6 +27,10 @@ public:
     int getZeilen() const;
     float &getElemente();
     const float &getElemente() const;
+    float operator()(int i,int j);
+
+    Matrix& operator=(Matrix const &o);
+
 };
 
 #endif /* MATRIX_H_ */

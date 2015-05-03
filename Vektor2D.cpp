@@ -37,6 +37,11 @@ Vektor2D::Vektor2D(Vektor2D &a) :
     a.kopiereIn(*this);
 }
 
+Vektor2D::Vektor2D(const Vektor2D &b):
+    Vektor::Vektor(b.getSpalten(), b.getZeilen()) {
+        b.kopiereIn(*this);
+}
+
 Vektor2D::~Vektor2D() {
     cout << "vektor2d decons" << endl;
 }
